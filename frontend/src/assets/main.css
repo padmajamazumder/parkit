@@ -1,0 +1,537 @@
+@import './base.css';
+
+#app {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  font-weight: normal;
+  min-height: 100vh;
+}
+
+a,
+.green {
+  text-decoration: none;
+  color: hsla(160, 100%, 37%, 1);
+  transition: 0.4s;
+  padding: 3px;
+}
+
+@media (hover: hover) {
+  a:hover {
+    background-color: hsla(160, 100%, 37%, 0.2);
+  }
+}
+
+/* Form Styling */
+form {
+  max-width: 500px;
+  margin: 0 auto;
+  background: var(--color-background-soft);
+  padding: 2rem;
+  border-radius: 8px;
+  border: 1px solid var(--color-border);
+}
+
+form > div {
+  margin-bottom: 1rem;
+}
+
+label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: var(--color-heading);
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="number"],
+input[type="search"],
+input:not([type]),
+textarea,
+select {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+  background: var(--color-background);
+  color: var(--color-text);
+  font-size: 1rem;
+  box-sizing: border-box;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+  border-color: hsla(160, 100%, 37%, 1);
+  box-shadow: 0 0 0 2px hsla(160, 100%, 37%, 0.2);
+}
+
+input:disabled,
+textarea:disabled,
+select:disabled {
+  background-color: var(--color-background-mute);
+  color: var(--color-text-muted);
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: var(--color-text-muted);
+  opacity: 0.7;
+}
+
+button {
+  background: hsla(160, 100%, 37%, 1);
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background: hsla(160, 100%, 32%, 1);
+}
+
+button:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
+
+/* Table Styling */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem 0;
+  background: var(--color-background);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+th, td {
+  padding: 0.75rem;
+  text-align: left;
+  border-bottom: 1px solid var(--color-border);
+  color: var(--color-text);
+}
+
+th {
+  background: var(--color-background-mute) !important;
+  font-weight: 600 !important;
+  color: var(--color-heading) !important;
+}
+
+/* Force table header visibility */
+table th,
+table thead th,
+.users-view table th,
+.admin-search-view table th {
+  color: var(--color-heading) !important;
+  background: var(--color-background-mute) !important;
+  font-weight: 600 !important;
+}
+
+tr:nth-child(even) {
+  background: var(--color-background-soft);
+}
+
+tr:hover {
+  background: var(--color-background-mute);
+}
+
+/* Ensure table data is always visible */
+table tbody td {
+  color: var(--color-text) !important;
+}
+
+table thead th {
+  color: var(--color-heading) !important;
+  background: var(--color-background-mute) !important;
+  font-weight: 600 !important;
+}
+
+/* Utility Classes */
+.error {
+  color: #dc3545;
+  margin: 0.5rem 0;
+  font-weight: 500;
+}
+
+.success {
+  color: #28a745;
+  margin: 0.5rem 0;
+  font-weight: 500;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.mt-2 {
+  margin-top: 1rem;
+}
+
+.mb-2 {
+  margin-bottom: 1rem;
+}
+
+/* Section Styling */
+section {
+  margin: 2rem 0;
+  background: var(--color-background-soft);
+  padding: 1.5rem;
+  border-radius: 8px;
+  border: 1px solid var(--color-border);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--color-heading);
+  margin-bottom: 1rem;
+}
+
+/* Navigation */
+nav {
+  background: var(--color-background-soft);
+  border-bottom: 2px solid var(--color-border);
+  margin-bottom: 2rem;
+  padding: 1rem;
+  border-radius: 8px;
+}
+
+/* Search and booking forms */
+.search-form {
+  display: flex;
+  gap: 1rem;
+  align-items: end;
+  margin-bottom: 2rem;
+}
+
+.search-form input {
+  flex: 1;
+  margin-bottom: 0;
+}
+
+.search-form button {
+  margin-bottom: 0;
+}
+
+/* Search section styling */
+.search-section {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  background: var(--color-background-soft);
+  border-radius: 8px;
+  border: 1px solid var(--color-border);
+}
+
+.search-section input {
+  flex: 1;
+  margin-bottom: 0;
+}
+
+.search-section span {
+  color: var(--color-text);
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+/* Button groups */
+.button-group {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.btn-secondary {
+  background: var(--color-background-mute) !important;
+  color: var(--color-text) !important;
+  border: 1px solid var(--color-border) !important;
+}
+
+.btn-secondary:hover {
+  background: var(--color-background-soft) !important;
+}
+
+/* Status indicators */
+.status-active {
+  color: #28a745;
+  font-weight: 600;
+}
+
+.status-completed {
+  color: #6c757d;
+  font-weight: 600;
+}
+
+.status-pending {
+  color: #ffc107;
+  font-weight: 600;
+}
+
+/* Better spacing for dashboard sections */
+.dashboard-section {
+  margin: 2rem 0;
+}
+
+/* Improved button styles for different contexts */
+.btn-primary {
+  background: hsla(160, 100%, 37%, 1);
+  color: white;
+}
+
+.btn-secondary {
+  background: var(--color-background-mute);
+  color: var(--color-text);
+  border: 1px solid var(--color-border);
+}
+
+.btn-danger {
+  background: #dc3545;
+  color: white;
+}
+
+.btn-success {
+  background: #28a745;
+  color: white;
+}
+
+/* Better form layout for inline forms */
+.form-inline {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.form-inline input,
+.form-inline select {
+  margin-bottom: 0;
+  flex: 1;
+}
+
+.form-inline button {
+  margin-bottom: 0;
+}
+
+/* Button groups */
+.button-group {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.button-group button {
+  flex: 1;
+}
+
+/* Form sections */
+form > .button-group {
+  margin-top: 1.5rem;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  #app {
+    padding: 1rem;
+  }
+  
+  form {
+    max-width: 100%;
+    padding: 1.5rem;
+  }
+  
+  .search-form {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .search-form input {
+    margin-bottom: 1rem;
+  }
+  
+  .button-group {
+    flex-direction: column;
+  }
+  
+  table {
+    font-size: 0.9rem;
+  }
+  
+  th, td {
+    padding: 0.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  #app {
+    padding: 2rem;
+  }
+}
+
+/* Improved focus states for accessibility */
+input:focus,
+textarea:focus,
+select:focus,
+button:focus {
+  outline: 2px solid hsla(160, 100%, 37%, 0.5);
+  outline-offset: 2px;
+}
+
+/* Loading and empty states */
+.loading {
+  text-align: center;
+  padding: 2rem;
+  color: var(--color-text);
+  font-style: italic;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 3rem;
+  color: var(--color-text);
+  background: var(--color-background-soft);
+  border-radius: 8px;
+  border: 1px solid var(--color-border);
+}
+
+/* Improved router link styling */
+router-link {
+  color: var(--color-text);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+router-link:hover {
+  color: hsla(160, 100%, 37%, 1);
+}
+
+/* Better spacing for main content areas */
+.view-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+/* Link styling improvements */
+a:not(.btn):not(button) {
+  color: hsla(160, 100%, 37%, 1);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+a:not(.btn):not(button):hover {
+  color: hsla(160, 100%, 32%, 1);
+  text-decoration: underline;
+}
+
+/* Ensure text is always visible with good contrast */
+p, span, div {
+  color: var(--color-text);
+}
+
+/* Strong emphasis for important text */
+strong, b {
+  color: var(--color-heading);
+  font-weight: 600;
+}
+
+/* Improve list styling if any */
+ul, ol {
+  color: var(--color-text);
+  padding-left: 1.5rem;
+}
+
+li {
+  margin-bottom: 0.25rem;
+}
+
+/* Ensure all text inputs have consistent styling */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="number"],
+input[type="search"],
+textarea,
+select {
+  background: var(--color-background);
+  color: var(--color-text);
+  border: 1px solid var(--color-border);
+}
+
+/* Fix any potential dark mode issues */
+@media (prefers-color-scheme: dark) {
+  input[type="text"],
+  input[type="email"],
+  input[type="password"],
+  input[type="number"],
+  input[type="search"],
+  textarea,
+  select {
+    background: var(--color-background);
+    color: var(--color-text);
+    border: 1px solid var(--color-border);
+  }
+  
+  /* Ensure placeholder text is visible */
+  input::placeholder,
+  textarea::placeholder {
+    color: var(--color-text);
+    opacity: 0.6;
+  }
+  
+  /* Dark mode spot colors */
+  .spot-box.occupied {
+    background: #4a2c2a !important;
+    color: #ff8a80 !important;
+    border-color: #d32f2f !important;
+  }
+
+  .spot-box.available {
+    background: #2e4e2e !important;
+    color: #a5d6a7 !important;
+    border-color: #4caf50 !important;
+  }
+  
+  .spot-box.reserved-by-user {
+    background: #4a3a2a !important;
+    color: #ffb74d !important;
+    border-color: #ff9800 !important;
+  }
+  
+  /* Ensure table text is visible in dark mode */
+  table tbody td {
+    color: var(--color-text) !important;
+  }
+  
+  table thead th {
+    color: var(--color-heading) !important;
+    background: var(--color-background-mute) !important;
+    font-weight: 600 !important;
+  }
+  
+  /* Ensure all table headers have proper contrast */
+  th {
+    color: var(--color-heading) !important;
+    background: var(--color-background-mute) !important;
+  }
+  
+  /* Better status colors in dark mode */
+  .status-active {
+    color: #81c784 !important;
+  }
+  
+  .status-completed {
+    color: #b0bec5 !important;
+  }
+}

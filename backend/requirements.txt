@@ -1,0 +1,12 @@
+flask
+flask-cors
+jinja2
+sqlalchemy
+celery
+redis
+flask-jwt-extended
+flask_sqlalchemy
+flask_migrate
+werkzeug
+flask-mail
+flask-apscheduler
